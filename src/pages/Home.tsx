@@ -120,8 +120,33 @@ export default function Home() {
       ) : null}
 
       <div className="footer">
-        <StarOrnament size={16} /> Semoga bermanfaat dan berkah{" "}
-        <StarOrnament size={16} />
+        <div className="footer-row">
+          <StarOrnament size={16} /> Semoga bermanfaat dan berkah{" "}
+          <StarOrnament size={16} />
+        </div>
+        <a className="contact-link" href="mailto:ryandhika.dev@gmail.com">
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
+          >
+            <path
+              d="M4.5 7.5C4.5 6.39543 5.39543 5.5 6.5 5.5H17.5C18.6046 5.5 19.5 6.39543 19.5 7.5V16.5C19.5 17.6046 18.6046 18.5 17.5 18.5H6.5C5.39543 18.5 4.5 17.6046 4.5 16.5V7.5Z"
+              stroke="currentColor"
+              strokeWidth="1.8"
+            />
+            <path
+              d="M6 8L12 12.25L18 8"
+              stroke="currentColor"
+              strokeWidth="1.8"
+              strokeLinejoin="round"
+            />
+          </svg>
+          <span>ryandhika.dev@gmail.com</span>
+        </a>
       </div>
 
       <Toast
