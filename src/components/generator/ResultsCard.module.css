@@ -1,0 +1,101 @@
+.title {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 28px;
+  padding: 2px 10px;
+  border-radius: 999px;
+  background: rgba(22, 163, 74, 0.10);
+  border: 1px solid rgba(22, 163, 74, 0.16);
+  color: rgb(20, 83, 45);
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 12px;
+  border-radius: 14px;
+  border: 1px solid rgba(24, 24, 27, 0.10);
+  background: rgba(24, 24, 27, 0.02);
+}
+
+.left {
+  min-width: 0;
+  flex: 1;
+}
+
+.name {
+  font-size: 14px;
+  font-weight: 900;
+  color: rgb(24, 24, 27);
+  margin-bottom: 4px;
+}
+
+.message {
+  font-size: 12px;
+  color: rgba(24, 24, 27, 0.70);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.phone {
+  margin-top: 4px;
+  font-size: 12px;
+  color: rgba(24, 24, 27, 0.56);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+.sendBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border-radius: 12px;
+  padding: 10px 12px;
+  font-size: 13px;
+  font-weight: 900;
+  color: white;
+  background: #25d366;
+  text-decoration: none;
+  transition: transform 120ms ease, filter 120ms ease;
+  flex-shrink: 0;
+}
+
+.sendBtn:hover {
+  transform: translateY(-1px);
+  filter: brightness(0.95);
+}
+
+@media (max-width: 720px) {
+  .item {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .sendBtn {
+    justify-content: center;
+  }
+}
+

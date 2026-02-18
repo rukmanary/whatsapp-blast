@@ -1,0 +1,17 @@
+.row {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: flex-end;
+  margin: 14px 0;
+}
+
+@media (max-width: 720px) {
+  .row {
+    justify-content: stretch;
+  }
+  .row :global(button) {
+    flex: 1;
+  }
+}
+

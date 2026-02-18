@@ -1,0 +1,61 @@
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.block {
+  background: rgba(24, 24, 27, 0.03);
+  border: 1px solid rgba(24, 24, 27, 0.08);
+  border-radius: 12px;
+  padding: 12px 12px;
+}
+
+.blockWide {
+  grid-column: 1 / -1;
+  background: rgba(24, 24, 27, 0.03);
+  border: 1px solid rgba(24, 24, 27, 0.08);
+  border-radius: 12px;
+  padding: 12px 12px;
+}
+
+.blockTitle {
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(24, 24, 27, 0.60);
+  margin-bottom: 8px;
+}
+
+.list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 13px;
+  color: rgba(24, 24, 27, 0.76);
+}
+
+.text {
+  font-size: 13px;
+  color: rgba(24, 24, 27, 0.76);
+  line-height: 1.6;
+}
+
+.text code,
+.list code {
+  background: rgba(22, 163, 74, 0.10);
+  border: 1px solid rgba(22, 163, 74, 0.16);
+  padding: 1px 6px;
+  border-radius: 8px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 12px;
+}
+
+@media (max-width: 720px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+

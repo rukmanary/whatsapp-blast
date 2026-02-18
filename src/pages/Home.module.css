@@ -1,0 +1,33 @@
+.page {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 18px 16px 48px;
+}
+
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.error {
+  border: 1px solid rgba(220, 38, 38, 0.22);
+  background: rgba(220, 38, 38, 0.06);
+  color: rgb(153, 27, 27);
+  border-radius: 14px;
+  padding: 12px 12px;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.loading {
+  border: 1px solid rgba(24, 24, 27, 0.12);
+  background: rgba(24, 24, 27, 0.03);
+  color: rgba(24, 24, 27, 0.72);
+  border-radius: 14px;
+  padding: 12px 12px;
+  font-size: 13px;
+}
+

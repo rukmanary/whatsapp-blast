@@ -1,0 +1,27 @@
+.header {
+  text-align: center;
+  padding: 28px 0 18px;
+}
+
+.kicker {
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(24, 24, 27, 0.60);
+  margin-bottom: 8px;
+}
+
+.title {
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: rgb(24, 24, 27);
+}
+
+.subtitle {
+  font-size: 14px;
+  color: rgba(24, 24, 27, 0.64);
+  margin-top: 10px;
+  line-height: 1.6;
+}
+

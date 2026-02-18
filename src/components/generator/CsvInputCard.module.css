@@ -1,0 +1,144 @@
+.tabRow {
+  display: inline-flex;
+  border: 1px solid rgba(24, 24, 27, 0.10);
+  background: rgba(24, 24, 27, 0.03);
+  border-radius: 12px;
+  padding: 2px;
+}
+
+.tab {
+  border: none;
+  background: transparent;
+  padding: 8px 10px;
+  border-radius: 10px;
+  font-size: 12px;
+  font-weight: 800;
+  color: rgba(24, 24, 27, 0.70);
+}
+
+.active {
+  background: white;
+  color: rgb(24, 24, 27);
+  box-shadow: 0 6px 14px rgba(24, 24, 27, 0.10);
+}
+
+.fileInput {
+  display: none;
+}
+
+.uploadWrap {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.dropZone {
+  border: 2px dashed rgba(24, 24, 27, 0.18);
+  border-radius: 14px;
+  padding: 18px 14px;
+  background: rgba(24, 24, 27, 0.02);
+  cursor: pointer;
+  transition: background 120ms ease, transform 120ms ease, border-color 120ms ease;
+}
+
+.dropZone:hover {
+  background: rgba(22, 163, 74, 0.06);
+  border-color: rgba(22, 163, 74, 0.34);
+  transform: translateY(-1px);
+}
+
+.dropIcon {
+  width: 36px;
+  height: 36px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(22, 163, 74, 0.10);
+  border: 1px solid rgba(22, 163, 74, 0.16);
+  color: rgb(20, 83, 45);
+  margin-bottom: 10px;
+}
+
+.dropTitle {
+  font-size: 14px;
+  font-weight: 800;
+  color: rgb(24, 24, 27);
+}
+
+.dropHint {
+  font-size: 12px;
+  color: rgba(24, 24, 27, 0.62);
+  margin-top: 6px;
+  line-height: 1.6;
+}
+
+.pasteWrap {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.pasteHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.pasteTitle {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 800;
+  color: rgb(24, 24, 27);
+}
+
+.textarea {
+  width: 100%;
+  min-height: 140px;
+  border: 1px solid rgba(24, 24, 27, 0.14);
+  border-radius: 12px;
+  padding: 12px 12px;
+  font-size: 13px;
+  line-height: 1.6;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  background: rgba(24, 24, 27, 0.02);
+}
+
+.hint {
+  font-size: 12px;
+  color: rgba(24, 24, 27, 0.60);
+}
+
+.columnsRow {
+  margin-top: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.columnsLabel {
+  font-size: 12px;
+  font-weight: 800;
+  color: rgba(24, 24, 27, 0.60);
+}
+
+.pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.pill {
+  font-size: 12px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: rgba(22, 163, 74, 0.10);
+  border: 1px solid rgba(22, 163, 74, 0.16);
+  color: rgb(20, 83, 45);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
