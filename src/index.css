@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Nunito:wght@300;400;500;600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Nunito:wght@300;400;500;600&display=swap");
 
 *,
 *::before,
@@ -25,10 +25,19 @@
 }
 
 body {
-  font-family: 'Nunito', sans-serif;
+  font-family: "Nunito", sans-serif;
   background: var(--cream);
-  background-image: radial-gradient(circle at 20% 50%, rgba(184, 151, 90, 0.04) 0%, transparent 50%),
-    radial-gradient(circle at 80% 20%, rgba(58, 107, 74, 0.04) 0%, transparent 50%);
+  background-image:
+    radial-gradient(
+      circle at 20% 50%,
+      rgba(184, 151, 90, 0.04) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 80% 20%,
+      rgba(58, 107, 74, 0.04) 0%,
+      transparent 50%
+    );
   color: var(--charcoal);
   min-height: 100vh;
 }
@@ -62,7 +71,7 @@ textarea {
 }
 
 .header h1 {
-  font-family: 'Amiri', serif;
+  font-family: "Amiri", serif;
   font-size: 2.4rem;
   color: var(--charcoal);
   letter-spacing: 0.02em;
@@ -82,7 +91,7 @@ textarea {
 }
 
 .bismillah {
-  font-family: 'Amiri', serif;
+  font-family: "Amiri", serif;
   font-size: 1.5rem;
   color: var(--gold);
   margin-bottom: 0.75rem;
@@ -103,7 +112,7 @@ textarea {
 }
 
 .card::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -114,7 +123,7 @@ textarea {
 }
 
 .card-title {
-  font-family: 'Amiri', serif;
+  font-family: "Amiri", serif;
   font-size: 1.25rem;
   color: var(--green);
   margin-bottom: 0.25rem;
@@ -163,7 +172,7 @@ textarea {
   color: var(--green);
   padding: 0.1em 0.4em;
   border-radius: 4px;
-  font-family: 'Courier New', monospace;
+  font-family: "Courier New", monospace;
 }
 
 .col-list {
@@ -174,7 +183,7 @@ textarea {
 }
 
 .col-list li::before {
-  content: '◆ ';
+  content: "◆ ";
   color: var(--gold);
   font-size: 0.7em;
 }
@@ -245,7 +254,7 @@ textarea {
   border: 1.5px solid var(--border);
   border-radius: 10px;
   padding: 0.9rem 1rem;
-  font-family: 'Nunito', sans-serif;
+  font-family: "Nunito", sans-serif;
   font-size: 0.95rem;
   color: var(--charcoal);
   background: var(--parchment);
@@ -303,7 +312,7 @@ button.tag {
   color: #fff;
   border: none;
   border-radius: 12px;
-  font-family: 'Amiri', serif;
+  font-family: "Amiri", serif;
   font-size: 1.2rem;
   letter-spacing: 0.05em;
   cursor: pointer;
@@ -339,7 +348,7 @@ button.tag {
 
 /* Message List */
 .results-header {
-  font-family: 'Amiri', serif;
+  font-family: "Amiri", serif;
   font-size: 1.4rem;
   color: var(--charcoal);
   margin: 2rem 0 1rem;
@@ -353,7 +362,7 @@ button.tag {
 .results-count {
   background: var(--green-muted);
   color: var(--green);
-  font-family: 'Nunito', sans-serif;
+  font-family: "Nunito", sans-serif;
   font-size: 0.8rem;
   font-weight: 700;
   padding: 0.2em 0.7em;
@@ -371,7 +380,9 @@ button.tag {
   justify-content: space-between;
   gap: 1rem;
   box-shadow: 0 1px 8px rgba(0, 0, 0, 0.04);
-  transition: box-shadow 0.2s, transform 0.2s;
+  transition:
+    box-shadow 0.2s,
+    transform 0.2s;
 }
 
 .message-item.clicked {
@@ -426,7 +437,9 @@ button.tag {
   font-size: 0.82rem;
   font-weight: 600;
   white-space: nowrap;
-  transition: background 0.15s, transform 0.15s;
+  transition:
+    background 0.15s,
+    transform 0.15s;
   flex-shrink: 0;
 }
 
@@ -469,7 +482,7 @@ button.tag {
 }
 
 .tooltip::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 100%;
   left: 12px;
@@ -486,6 +499,23 @@ button.tag {
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
+}
+
+.contact-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--green);
+  text-decoration: none;
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+  border: 1px solid rgba(58, 107, 74, 0.18);
+  background: rgba(58, 107, 74, 0.06);
+}
+
+.contact-link:hover {
+  background: rgba(58, 107, 74, 0.1);
+  border-color: rgba(58, 107, 74, 0.26);
 }
 
 .chips-row {
@@ -555,7 +585,7 @@ button.tag {
 }
 
 .modal::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -566,7 +596,7 @@ button.tag {
 }
 
 .modal-title {
-  font-family: 'Amiri', serif;
+  font-family: "Amiri", serif;
   font-size: 1.25rem;
   color: var(--green);
   padding: 1.1rem 1.25rem 0.25rem;
