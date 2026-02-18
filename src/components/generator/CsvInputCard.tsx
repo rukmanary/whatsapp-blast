@@ -1,5 +1,6 @@
 import { useCallback, useRef, useState } from 'react';
 import { useBlast } from '@/context/BlastContext';
+import { trackEvent } from '@/utils/analytics';
 
 export function CsvInputCard() {
   const fileRef = useRef<HTMLInputElement | null>(null);
@@ -8,9 +9,13 @@ export function CsvInputCard() {
   const [fileName, setFileName] = useState('');
 
   const processFile = useCallback(
-    (file: File | null | undefined) => {
+    (file: File | null | undefined, method: 'click' | 'drop') => {
       if (!file) return;
       if (!file.name.toLowerCase().endsWith('.csv')) return;
+      trackEvent('csv_file_selected', {
+        method,
+        file_size: file.size,
+      });
       setFileName(file.name);
       parseCsvFile(file);
     },
@@ -33,9 +38,13 @@ export function CsvInputCard() {
         onDrop={(e) => {
           e.preventDefault();
           setDragging(false);
-          processFile(e.dataTransfer.files?.[0]);
+          trackEvent('csv_upload_drop');
+          processFile(e.dataTransfer.files?.[0], 'drop');
         }}
-        onClick={() => fileRef.current?.click()}
+        onClick={() => {
+          trackEvent('csv_upload_click');
+          fileRef.current?.click();
+        }}
         role="button"
         tabIndex={0}
       >
@@ -44,7 +53,7 @@ export function CsvInputCard() {
           type="file"
           accept=".csv"
           aria-label="Upload CSV"
-          onChange={(e) => processFile(e.target.files?.[0])}
+          onChange={(e) => processFile(e.target.files?.[0], 'click')}
         />
         <div className="drop-icon">📂</div>
         <p>

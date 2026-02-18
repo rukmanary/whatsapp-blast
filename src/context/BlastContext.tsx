@@ -4,6 +4,7 @@ import { createContext, useCallback, useEffect, useMemo, useState } from 'react'
 import type { CsvRow, GeneratedMessage, InputMode, SavedTemplate } from '@/types/blast';
 import { buildWhatsAppLink, fillTemplate, formatPhone } from '@/utils/whatsapp';
 import { readJson, writeJson } from '@/utils/storage';
+import { trackEvent } from '@/utils/analytics';
 
 const STORAGE_KEYS = {
   savedTemplates: 'whatsapp-blast:saved-templates:v1',
@@ -191,18 +192,23 @@ export function BlastProvider({ children }: { children: React.ReactNode }) {
   const generate = useCallback(() => {
     setError('');
 
+    trackEvent('generate_click');
+
     if (!csvRows.length) {
       setError('Harap upload file CSV terlebih dahulu.');
+      trackEvent('generate_error', { reason: 'no_csv' });
       return;
     }
     if (!template.trim()) {
       setError('Template pesan tidak boleh kosong.');
+      trackEvent('generate_error', { reason: 'empty_template' });
       return;
     }
 
     const { missing } = ensureRequiredColumns(columns);
     if (missing.length) {
       setError(`Kolom berikut tidak ditemukan di CSV: ${missing.join(', ')}`);
+      trackEvent('generate_error', { reason: 'missing_columns', missing_count: missing.length });
       return;
     }
 
@@ -221,6 +227,7 @@ export function BlastProvider({ children }: { children: React.ReactNode }) {
 
     setGenerated(result);
     setClickedLinks({});
+    trackEvent('generate_result', { row_count: result.length });
   }, [columns, csvRows, template]);
 
   const value = useMemo<BlastContextValue>(

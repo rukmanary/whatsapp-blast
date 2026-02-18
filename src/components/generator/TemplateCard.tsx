@@ -1,6 +1,7 @@
 import { useMemo, useState } from 'react';
 import { ConfirmModal } from '@/components/common/ConfirmModal';
 import { useBlast } from '@/context/BlastContext';
+import { trackEvent } from '@/utils/analytics';
 
 export function TemplateCard() {
   const { template, setTemplate, columns, savedTemplates, saveTemplate, deleteSavedTemplate } = useBlast();
@@ -17,6 +18,7 @@ export function TemplateCard() {
 
   const confirmDelete = () => {
     if (!confirmingId) return;
+    trackEvent('delete_template');
     deleteSavedTemplate(confirmingId);
     setConfirmingId(null);
   };
@@ -67,7 +69,19 @@ export function TemplateCard() {
 
       <div className="placeholder-tags" style={{ marginTop: '0.75rem' }}>
         <span style={{ fontSize: '0.75rem', color: 'var(--muted)' }}>Aksi:</span>
-        <button type="button" className="tag" onClick={() => saveTemplate()}>
+        <button
+          type="button"
+          className="tag"
+          onClick={() => {
+            const text = template.trim();
+            const isDuplicate = Boolean(text) && savedTemplates.some((t) => t.text.trim() === text);
+            trackEvent('save_template', {
+              outcome: !text ? 'empty' : isDuplicate ? 'duplicate' : 'saved',
+              text_len: text.length,
+            });
+            saveTemplate();
+          }}
+        >
           Simpan Template
         </button>
       </div>
@@ -87,7 +101,10 @@ export function TemplateCard() {
                   type="button"
                   className="chip-x"
                   aria-label="Hapus template"
-                  onClick={() => setConfirmingId(t.id)}
+                  onClick={() => {
+                    trackEvent('delete_template_prompt');
+                    setConfirmingId(t.id);
+                  }}
                 >
                   ×
                 </button>

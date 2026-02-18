@@ -7,6 +7,7 @@ import { Toast } from "@/components/common/Toast";
 import { useBlast } from "@/context/BlastContext";
 import { useClipboard } from "@/hooks/useClipboard";
 import { useCallback, useState } from "react";
+import { trackEvent } from "@/utils/analytics";
 
 export default function Home() {
   const {
@@ -34,6 +35,7 @@ export default function Home() {
       setError(lastError || "Copy gagal.");
       return;
     }
+    trackEvent("copy_message", { text_len: text.length });
     showToast("Pesan berhasil dicopy.");
   };
 
@@ -43,6 +45,7 @@ export default function Home() {
       setError(lastError || "Copy gagal.");
       return;
     }
+    trackEvent("copy_link");
     showToast("Link berhasil dicopy.");
   };
 
@@ -110,7 +113,12 @@ export default function Home() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="wa-btn"
-                onClick={() => markClicked(g.link)}
+                onClick={() => {
+                  trackEvent("send_message_click", {
+                    already_clicked: Boolean(clickedLinks[g.link]),
+                  });
+                  markClicked(g.link);
+                }}
               >
                 Kirim Pesan
               </a>

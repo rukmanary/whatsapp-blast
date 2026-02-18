@@ -31,3 +31,7 @@ You can add any extra columns (e.g. `order_id`, `date`) and reference them in th
 This project builds to static assets under `dist/` and can be deployed to any static host.
 
 For VPS + Nginx deployment steps, see [deploy-vps-nginx.md](docs/deploy-vps-nginx.md).
+
+## Analytics (GA4)
+
+GA4 integration and event list: [analytics-ga4.md](file:///Users/ryan/workspace/myApp/whatsapp-blast/docs/analytics-ga4.md).
