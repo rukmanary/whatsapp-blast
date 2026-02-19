@@ -34,4 +34,4 @@ For VPS + Nginx deployment steps, see [deploy-vps-nginx.md](docs/deploy-vps-ngin
 
 ## Analytics
 
-Firebase Analytics setup & event list: [analytics-firebase.md](file:///Users/ryan/workspace/myApp/whatsapp-blast/docs/analytics-firebase.md).
+Firebase Analytics setup & event list: [analytics-firebase.md](docs/analytics-firebase.md).
