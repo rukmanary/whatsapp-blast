@@ -32,6 +32,6 @@ This project builds to static assets under `dist/` and can be deployed to any st
 
 For VPS + Nginx deployment steps, see [deploy-vps-nginx.md](docs/deploy-vps-nginx.md).
 
-## Analytics (GA4)
+## Analytics
 
-GA4 integration and event list: [analytics-ga4.md](file:///Users/ryan/workspace/myApp/whatsapp-blast/docs/analytics-ga4.md).
+Firebase Analytics setup & event list: [analytics-firebase.md](file:///Users/ryan/workspace/myApp/whatsapp-blast/docs/analytics-firebase.md).
